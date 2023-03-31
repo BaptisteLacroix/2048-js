@@ -1,0 +1,312 @@
+@charset "utf-8";
+
+body {
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #F0F0F0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+}
+
+#container {
+    position: relative;
+    height: 70vh;
+}
+
+#game {
+    border-style: solid;
+    border-width: 1px;
+    position: absolute;
+    background-color: #BBADA0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 406px;
+    height: 406px;
+}
+
+/* row 1 */
+#r1-c1 {
+    top: 0;
+    left: 0;
+}
+
+#r1-c2 {
+    top: 0;
+    left: 102px;
+}
+
+#r1-c3 {
+    top: 0;
+    left: 204px;
+}
+
+#r1-c4 {
+    top: 0;
+    left: 306px;
+}
+
+/* row 2 */
+#r2-c1 {
+    top: 102px;
+    left: 0;
+}
+
+#r2-c2 {
+    top: 102px;
+    left: 102px;
+}
+
+#r2-c3 {
+    top: 102px;
+    left: 204px;
+}
+
+#r2-c4 {
+    top: 102px;
+    left: 306px;
+}
+
+/* row 3 */
+#r3-c1 {
+    top: 204px;
+    left: 0;
+}
+
+#r3-c2 {
+    top: 204px;
+    left: 102px;
+}
+
+#r3-c3 {
+    top: 204px;
+    left: 204px;
+}
+
+#r3-c4 {
+    top: 204px;
+    left: 306px;
+}
+
+/* row 4 */
+#r4-c1 {
+    top: 306px;
+    left: 0;
+}
+
+#r4-c2 {
+    top: 306px;
+    left: 102px;
+}
+
+#r4-c3 {
+    top: 306px;
+    left: 204px;
+}
+
+#r4-c4 {
+    top: 306px;
+    left: 306px;
+}
+
+/* box */
+.box {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #BBADA0;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    line-height: 100px;
+    height: 100px;
+    position: absolute;
+    z-index: 1;
+    transition-property: top, left;
+    transition-duration: 3s;
+    text-align: center;
+}
+
+.orange {
+    background-color: #FF8C00;
+}
+
+.red {
+    background-color: #DC143C;
+}
+
+.box span {
+    display: inline-block;
+    height: 50%;
+    transform: translateY(60%);
+}
+
+.lastInsert {
+    background-color: red;
+    /* Animate the apparition of the element */
+    animation-name: lastInsert;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+
+
+}
+
+@keyframes lastInsert {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.color-2 {
+    background-color: #eee4da;
+    color: #776e65;
+}
+
+.color-4 {
+    background-color: #ede0c8;
+    color: #776e65;
+}
+
+.color-8 {
+    background-color: #f2b179;
+    color: #f9f6f2;
+}
+
+.color-16 {
+    background-color: #f59563;
+    color: #f9f6f2;
+}
+
+.color-32 {
+    background-color: #f67c5f;
+    color: #f9f6f2;
+}
+
+.color-64 {
+    background-color: #f65e3b;
+    color: #f9f6f2;
+}
+
+.color-128 {
+    background-color: #edcf72;
+    color: #f9f6f2;
+}
+
+.color-256 {
+    background-color: #edcc61;
+    color: #f9f6f2;
+}
+
+.color-512 {
+    background-color: #edc850;
+    color: #f9f6f2;
+}
+
+.color-1024 {
+    background-color: #edc53f;
+    color: #f9f6f2;
+}
+
+.color-2048 {
+    background-color: #edc22e;
+    color: #f9f6f2;
+}
+
+#score {
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 2em;
+}
+
+#instructions {
+    height: 200px;
+    text-align: center;
+}
+
+#ai {
+    line-height: 10px;
+    text-align: center;
+}
+
+#ai button {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 0.5em;
+    background-color: #eee4da;
+}
+
+#game-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+
+#game-over > div {
+    margin-top: 70px;
+}
+
+#game-over > #game-over-restart {
+    /* it's a button */
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid #ccc0b3;
+    font-size: 0.5em;
+    margin: 50px auto 0;
+}
+
+#game-won {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 215, 0, 0.5);
+    z-index: 2;
+    color: black;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+
+#game-won > div {
+    margin-top: 70px;
+}
+
+#game-won > #game-won-restart {
+    /* it's a button */
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+    background-color: #FFD700;
+    border: 1px solid #ccc0b3;
+    font-size: 0.5em;
+    margin: 50px auto 0;
+}
