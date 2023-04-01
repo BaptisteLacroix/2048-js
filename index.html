@@ -2,9 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8"/>
-    <meta name="author" content="Jean-Michel Bruneau - UCA - IUT - INFO"/>
-    <title>M413 - TD 3 - Jeux 2048</title>
-    <link href="assets/favicon.ico" rel="icon" type="image/x-icon"/>
+    <meta name="author" content="Lacroix Baptiste"/>
+    <title>R410 - TD 3 - Jeux 2048</title>
     <link rel="stylesheet" type="text/css" href="css/2048.css"/>
     <script defer="defer" src="js/2048.js"></script>
 </head>
@@ -22,8 +21,12 @@
     <div id="ai">
         <p>
             Start AI :
-            <button id="ai-start">Start AI</button>
+            <button class="button-ai" id="ai-start">Start AI</button>
         </p>
+        <label for="ai-speed">
+            AI speed (ms) :
+        </label>
+        <input type="range" id="ai-speed" min="0" max="1000" value="500" step="10">
     </div>
     <div id="score">
         <div id="score-title">Score</div>
@@ -32,6 +35,7 @@
     <div id="game">
         <div id="game-won">
             <div id="game-won-message">You Won!</div>
+            <button class="button-ai" id="ai-continue">Continue</button>
             <div id="game-won-restart">Restart</div>
         </div>
         <div id="game-over">
